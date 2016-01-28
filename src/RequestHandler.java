@@ -29,12 +29,12 @@ class RequestHandler implements Runnable {
             System.out.println(s);
             
             //Start parsing the request
-            StringTokenizer st = new StringTokenizer(s);
+            StringTokenizer token = new StringTokenizer(s);
             String fileName = "";
             
             try {
-                if (st.hasMoreElements()&& st.nextToken().equalsIgnoreCase("GET")) {
-                    fileName = st.nextToken(); //The file to be retrieved
+                if (token.hasMoreElements()&& token.nextToken().equalsIgnoreCase("GET") && token.hasMoreElements()) {
+                    fileName = token.nextToken(); //The file to be retrieved
                     
                 } else {
                     //HTTP Status Code 400: Bad Request
