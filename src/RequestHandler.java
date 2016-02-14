@@ -74,14 +74,14 @@ class RequestHandler implements Runnable {
                     return;
                 }
                 
-                //May throw FileNotFoundException
-                InputStream f = new FileInputStream(file);
-                
                 //Check if have read permission
                 if (!new File(file).canRead()) {
                     //HTTP Status Code 403: Forbidden
                     throw new SecurityException();
                 }
+                
+                //May throw FileNotFoundException
+                InputStream f = new FileInputStream(file);
                 
                 //Determine the content type
                 String contentType = "text/plain";
