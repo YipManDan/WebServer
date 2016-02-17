@@ -2,6 +2,8 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
+//This is a test
+
 class RequestHandler implements Runnable {
     private Socket socket; //Socket accepted from the server
     private String directory; //The working directory
